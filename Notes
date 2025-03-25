@@ -1,1 +1,20 @@
 It's a quantum algorithm designed to solve combinatorial optimization problems. 
+            -Combinatorial optimization problems are problems where you need to find the best solution from a finite but large set of possible solutions.
+
+A variational approach with classical optimization techniques means that QAOA uses both quantum and classical methods to find an optimal solution. Here’s how it works:
+
+        Variational Approach (Quantum Part)
+
+            -QAOA prepares a quantum state based on adjustable parameters 𝛽 and γ. These parameters define how the quantum system evolves.The quantum circuit is run multiple times to estimate the expectation value (a measure of how good a solution is).
+
+        Classical Optimization
+
+            -The expectation value is fed into a classical optimizer (like gradient descent, Nelder-Mead, or COBYLA).The classical optimizer updates β and γ to improve the solution.This process repeats until we find the best parameters that give the optimal solution.
+
+Why is this useful?
+    Since quantum computers can explore many states in parallel, they help find good solutions faster than classical-only methods. But since they are noisy, classical optimization is used to fine-tune results.
+
+Key components:
+    -Cost Hamiltonian (H_C): Encodes the optimization problem.
+    -Mixer Hamiltonian (H_M): Introduces transitions between states.
+    -Parameterized Quantum Circuit: Uses angles β and γ to optimize the solution.
